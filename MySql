@@ -15,46 +15,46 @@ insert into Employee(EMPLOYEE_ID,FIRST_NAME,LAST_NAME,SALARY, JOINING_DATE, DEPA
 insert into Employee(EMPLOYEE_ID,FIRST_NAME,LAST_NAME,SALARY, JOINING_DATE, DEPARTMENT) values(12, "Sivakumar","k",54789,20160203,"SOFTWARE");
 
 
- select * from Employee;                           																	                                      -- 1
+ select * from Employee;                           																	                                      
 
-Select FIRST_NAME, LAST_NAME  from Employee;         																	                                    -- 2
-select FIRST_NAME from Employee as EMPLOYEE_NAME;      																		                                 -- 3
-select upper(FIRST_NAME) from employee;                 																		                          -- 4
-select lower(FIRST_NAME) from employee;             																				                      -- 5
-select distinct DEPARTMENT  from employee;																									              -- 6
-select substring(FIRST_NAME,1,3) from employee;   		                          											                              -- 7
-select position('a' in "Ragavi") as position;       																						              -- 8
-select trim(FIRST_NAME) from employee;             																						                  -- 9,10
-select length(FIRST_NAME) from employee;                                          												                          -- 11
-select replace(FIRST_NAME, "a","$") from employee;    																						               -- 12
-select concat(FIRST_NAME,'_', LAST_NAME) FROM employee; 																				                   -- 13
+Select FIRST_NAME, LAST_NAME  from Employee;         																	                                   
+select FIRST_NAME from Employee as EMPLOYEE_NAME;      																		                                 
+select upper(FIRST_NAME) from employee;                 																		                          
+select lower(FIRST_NAME) from employee;             																				                      
+select distinct DEPARTMENT  from employee;																									              
+select substring(FIRST_NAME,1,3) from employee;   		                          											                             
+select position('a' in "Ragavi") as position;       																						             
+select trim(FIRST_NAME) from employee;             																						                  
+select length(FIRST_NAME) from employee;                                          												                          
+select replace(FIRST_NAME, "a","$") from employee;    																						               
+select concat(FIRST_NAME,'_', LAST_NAME) FROM employee; 																				                  
 select FIRST_NAME, year(joining_date), month(joining_date), day(joining_date) from employee;                                                               -- 14
-select * from employee order by FIRST_NAME asc;                                               								                                -- 15
-select * from employee order by LAST_NAME asc;                                    											                                -- 16
-select * from employee order by FIRST_NAME asc, SALARY desc;																								-- 17
-select * from employee where FIRST_NAME = "Dinesh";																											-- 18
-select * from employee where FIRST_NAME = "Dinesh" or "roy";																								-- 19
-select * from employee where FIRST_NAME <> "Dinesh" or "roy";																								-- 20
-select * from employee where FIRST_NAME like "%s";                                              			   												 -- 21
-select * from employee where FIRST_NAME like "%V%";																											-- 22
-select * from employee where FIRST_NAME like "%n%";																		                                	-- 23
-select * from employee where FIRST_NAME like "%n" AND char_length(FIRST_NAME)=4;																			-- 24
+select * from employee order by FIRST_NAME asc;                                               								                               
+select * from employee order by LAST_NAME asc;                                    											                                
+select * from employee order by FIRST_NAME asc, SALARY desc;																								
+select * from employee where FIRST_NAME = "Dinesh";																											
+select * from employee where FIRST_NAME = "Dinesh" or "roy";																								
+select * from employee where FIRST_NAME <> "Dinesh" or "roy";																								
+select * from employee where FIRST_NAME like "%s";                                              			   												 
+select * from employee where FIRST_NAME like "%V%";																											
+select * from employee where FIRST_NAME like "%n%";																		                                	
+select * from employee where FIRST_NAME like "%n" AND char_length(FIRST_NAME)=4;																			
 -- select EMPLOYEE_ID, concat(FIRST_NAME, " " ,LAST_NAME) AS EMPLOYEE_NAME FROM employee;   
- select * from employeetable where FIRST_NAME like "j%" and char_length(first_name)=4;																		  -- 25
- select * from employeetable where SALARY >=60000;                                              															  -- 26
- select * from employeetable where SALARY <=80000;                                      																	  -- 27
- select * from employeetable where SALARY >=50000 and SALARY <=80000;                   																	                 -- 28
- select * from employeetable where FIRST_NAME  in ("venkatesh","ragavi");                                           							   		   -- 29
+ select * from employeetable where FIRST_NAME like "j%" and char_length(first_name)=4;																	
+ select * from employeetable where SALARY >=60000;                                              															  
+ select * from employeetable where SALARY <=80000;                                      																	
+ select * from employeetable where SALARY >=50000 and SALARY <=80000;                   																	         
+ select * from employeetable where FIRST_NAME  in ("venkatesh","ragavi");                                           							   		   
  /* sql date functions*/
- select * from employeetable where  year(joining_date)  = 2015;           				                            								             -- 30
- select * from employeetable where month(joining_date)  = "January";                    						          								             -- 31
- select * from employeetable where date(joining_date)<20170101;                        						                										     -- 32
- select * from employeetable where date(joining_date)>20160131;                         		            										            	 -- 33
+ select * from employeetable where  year(joining_date)  = 2015;           				                            								            
+ select * from employeetable where month(joining_date)  = "January";                    						          								             
+ select * from employeetable where date(joining_date)<20170101;                        						                						
+ select * from employeetable where date(joining_date)>20160131;                         		            										
 																															                                                                             -- 34 not write
- select date(joining_date) from employeetable;                                         										                                   -- 35
+ select date(joining_date) from employeetable;                                         										                                   
 SELECT EXTRACT(HOUR FROM joining_datetime) AS hour,EXTRACT(MINUTE FROM joining_datetime) AS minute,EXTRACT(SECOND FROM joining_datetime) AS second
-FROM employeetable;																											             		                                                     -- 36  
-select count(joining_date)joining_date from employeetable group by JOINING_DATE having JOINING_DATE = "2017-07-08";                                            -- 37
-select curdate();																												                                                                     -- 38
-SELECT FIRST_NAME, LAST_NAME FROM employeetable  WHERE LAST_NAME LIKE '%\%%';                                                                                  -- 39
-SELECT REPLACE(LAST_NAME, '%', ' ') AS modified_LAST_NAME FROM emptable;                                                                                       -- 40
+FROM employeetable;																											             		                                                      
+select count(joining_date)joining_date from employeetable group by JOINING_DATE having JOINING_DATE = "2017-07-08";                                            
+select curdate();																												                                                                    
+SELECT FIRST_NAME, LAST_NAME FROM employeetable  WHERE LAST_NAME LIKE '%\%%';                                                                                 
+SELECT REPLACE(LAST_NAME, '%', ' ') AS modified_LAST_NAME FROM emptable;                                                                                       
